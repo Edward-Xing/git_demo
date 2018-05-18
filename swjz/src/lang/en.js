@@ -4,7 +4,6 @@ export default {
     languageSwitch: 'languageSwitch',
     theme: 'Theme'
   },
-  isSelect: 'Ghosts',
     footNav: [{title: 'Ghosts',active:'active',noActive:'noActive',url:'Ghosts'},
         {title: 'ClubBase ',active:'active',noActive:'noActive',url:'ClubBase'},
         {title: 'LegionGhosts ',active:'active',noActive:'noActive',url:'LegionGhosts'},
@@ -13,8 +12,10 @@ export default {
         {title: 'AllianceWorld ',active:'active',noActive:'noActive',url:'AllianceWorld'}
   ],
     Title:{
-        base:'Club base',
-        footer:'Financial hand Club'
+        base:'  Club   base    ',
+        footer:'Financial hand Club',
+        carr:'FourCarriages',
+        footer_img:'../../static/images/footer_login_en.gif',
     },
     clubImgs: [
         {src: '../../static/images/shanghai.jpg',name:'Shanghai base',url:'Shanghai'},
@@ -23,6 +24,12 @@ export default {
         {src: '../../static/images/shanghai.jpg',name:'Hefei base',url:'Hefei'},
         {src: '../../static/images/shanghai.jpg',name:'Changsha base',url:'Changsha'},
         {src: '../../static/images/shanghai.jpg',name:'Australia',url:'Australia'}
+    ],
+    carrData: [
+        {src: '../../static/images/shanghai.jpg',firname:'Ghosts',secname:'BusinessSchool',tirname:'商学院'},
+        {src: '../../static/images/shanghai.jpg',firname:'Ghosts',secname:'FinanceEconomics',tirname:'财经'},
+        {src: '../../static/images/shanghai.jpg',firname:'Ghosts',secname:'TVstation',tirname:'视频'},
+        {src: '../../static/images/shanghai.jpg',firname:'Ghosts',secname:'JingRonghospital',tirname:'金融医院'}
     ],
   skin: {
     blue: 'blue',

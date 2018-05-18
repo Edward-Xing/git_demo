@@ -5,7 +5,6 @@ export default {
     languageSwitch: '语言切换',
     theme: '主题'
   },
-  isSelect: '鬼首',
     footNav: [{title: '鬼首',active:'active',noActive:'noActive',url:'Ghosts'},
         {title: '俱乐部基地 ',active:'active',noActive:'noActive',url:'ClubBase'},
         {title: '鬼手军团 ',active:'active',noActive:'noActive',url:'LegionGhosts'},
@@ -15,7 +14,9 @@ export default {
   ],
     Title:{
         base:'俱乐部基地',
-        footer:'金融鬼手俱乐部鬼手所有'
+        footer:'金融鬼手俱乐部鬼手所有',
+        carr:'四  驾  马  车',
+        footer_img:'../../static/images/footer_login_zh.gif',
     },
     clubImgs: [
         {src: '../../static/images/shanghai.jpg',name:'上海基地',url:'Shanghai'},
@@ -24,6 +25,12 @@ export default {
         {src: '../../static/images/shanghai.jpg',name:'合肥基地',url:'Hefei'},
         {src: '../../static/images/shanghai.jpg',name:'长沙基地',url:'Changsha'},
         {src: '../../static/images/shanghai.jpg',name:'澳大利亚',url:'Australia'}
+    ],
+    carrData: [
+        {src: '../../static/images/shanghai.jpg',firname:'鬼手',secname:'商学院',tirname:'BusinessSchool'},
+        {src: '../../static/images/shanghai.jpg',firname:'鬼手',secname:'财经',tirname:'FinanceEconomics'},
+        {src: '../../static/images/shanghai.jpg',firname:'鬼手',secname:'视频',tirname:'TVstation'},
+        {src: '../../static/images/shanghai.jpg',firname:'鬼手',secname:'金融医院',tirname:'JingRonghospital'}
     ],
   skin: {
     blue: '天空蓝',

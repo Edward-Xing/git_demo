@@ -1,25 +1,16 @@
 <template>
 	<el-row class="container">
+		<!--头部-->
 		<div class="m-header">
 			<ul>
-				<li v-for="(item,index) in $t('footNav')" @click="selectMapNav(item)" :class="isSelect === item.title ? item.active : item.noActive">
+				<li v-for="(item,index) in $t('footNav')" @click="selectMapNav(item)" :class="select === item.url ? item.active : item.noActive">
 					<p>{{item.title}}</p>
 				</li>
 			</ul>
 			<p v-show="language==='zh'" class="language" @click="langueSubmit('en')">中文</p>
 			<p v-show="language==='en'" class="language" @click="langueSubmit('zh')">English</p>
 		</div>
-		<el-dialog
-				title="提示"
-				:visible.sync="changeLanguage"
-				width="15%"
-				:before-close="handleClose">
-						<span>确认切换语言吗？</span>
-						<span slot="footer" class="dialog-footer">
-				<el-button @click="changeLanguage = false">取 消</el-button>
-				<el-button type="primary" @click="handleSetLanguage">确 定</el-button>
-			  </span>
-		</el-dialog>
+		<!--显示内容-->
 	    <section class="content-container">
 			<div class="grid-content bg-purple-light">
 					<el-col :span="24" class="content-wrapper">
@@ -29,8 +20,10 @@
 					</el-col>
 				</div>
 		</section>
+		<!--底部-->
 		<div class="m-footer">
-			<img src="../../static/images/footer_login.gif" /><span>{{$t('Title.footer')}}</span>
+			<img :src="$t('Title.footer_img')" />
+			<span>{{$t('Title.footer')}}</span>
 		</div>
 	</el-row>
 </template>
@@ -41,33 +34,24 @@
 			return {
                 title:'',
                 lgu:'',
-                changeLanguage: false,
-                isSelect: '鬼首',
-                footNav: [{title: '鬼首',active:'active',noActive:'noActive',url:'Ghosts'},
-                    {title: '俱乐部基地 ',active:'active',noActive:'noActive',url:'ClubBase'},
-                    {title: '鬼手军团 ',active:'active',noActive:'noActive',url:'LegionGhosts'},
-                    {title: '鬼手动向 ',active:'active',noActive:'noActive',url:'GhostsHands'},
-                    {title: '四驾马车 ',active:'active',noActive:'noActive',url:'FourCarriages'},
-                    {title: '会盟天下 ',active:'active',noActive:'noActive',url:'AllianceWorld'},
-                    {title: '简体中文'}
-                ]
+                isSelect:''
 			}
 		},
         computed: {
+            select(){
+                let isSelect = this.isSelect;
+                return isSelect;
+			},
             language() {
                 return this.$store.getters.language;
             }
         },
 		methods: {
             selectMapNav (item) {
-                if(item.title==='简体中文'){
-                    this.changeLanguage=true;
-				}else{
-                    this.isSelect = item.title;
+                    this.isSelect = item.url;
                     this.title=item.title;
                     let url = item.url;
                     this.$router.push(url);
-				}
             },
             handleClose(done) {
                 this.$confirm('确认关闭？')
@@ -82,12 +66,16 @@
                 this.$store.dispatch('setLanguage', lang);
             },
             langueSubmit:function (lang) {
+                console.log(this.isSelect);
                 this.$i18n.locale = lang;
                 this.$store.dispatch('setLanguage', lang);
             }
 		},
-		mounted() {
-		}
+        created: function () {
+		    //获取当前路由显示
+            var str = this.$route.path;
+            this.isSelect = str.substr(1,str.length);
+        }
 	}
 
 </script>

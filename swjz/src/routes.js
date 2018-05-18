@@ -49,8 +49,8 @@ let routes = [
             { path: '/hongKong', component: HongKong},
             { path: '/shanghai', component: Shanghai},
             { path: '/zhengzhou', component: Zhengzhou},
-            { path: '/changsha', component: BusinessSchool},
-            { path: '/hongKong', component: FourCarriages},
+            { path: '/businessSchool', component: BusinessSchool},
+            { path: '/financeEconomics', component: FinanceEconomics},
             { path: '/jingRonghospital', component: JingRonghospital},
             { path: '/tVstation', component: TVstation}
         ]
